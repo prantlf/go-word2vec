@@ -72,20 +72,13 @@ The project offers a solution as both a Golang module and a simple command-line 
 
 ### Pre-requisites
 
-A dynamically linked library is required for the CGO bridge to integrate with Max Fomichev's word2vec C++ library. Ensure that the necessary C++ libraries are installed and properly configured on your system to use this functionality.
-
-To build the required dynamically linked library, use a C++11 compatible compiler and CMake 3.1 or higher. This step is essential before proceeding with the installation and usage of the Golang module.
+A static library is required for the CGO bridge to integrate with Max Fomichev's word2vec C++ library. Make sure that you have `cmake`, `make` and a C++ compiler installed and properly configured on your system to use this functionality.
 
 ```bash
-mkdir _build && cd _build
-brew install cmake
-cmake -DCMAKE_BUILD_TYPE=Release ../libw2v
 make
-cp ../libw2v/lib/libw2v.dylib /usr/local/lib/libw2v.dylib
 ```
 
-**Note**: The project does not currently distribute library binaries, though this feature is planned for a future version. You will need to build the binaries yourself for your target runtime. If you need assistance, please [raise an issue](https://github.com/fogfish/word2vec/issues).
-
+**Note**: The project does not currently distribute the static library, though this feature is planned for a future version. You will need to build the library yourself for your target runtime. If you need assistance, please [raise an issue](https://github.com/fogfish/word2vec/issues).
 
 ## Usage Command line utility
 

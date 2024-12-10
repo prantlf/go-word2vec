@@ -26,6 +26,7 @@ go.work.sum
 
 _build/
 .vscode/
-
-
 dist/
+libw2v/lib/
+w2v/w2v
+w2v/w2v.exe
